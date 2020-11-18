@@ -7,6 +7,9 @@
             <li>
                 <nuxt-link to="/tacofriends">Our Six(O)2️⃣ Friends</nuxt-link>
             </li>
+            <li>
+              <nuxt-link to="/plugins">PluginLooks</nuxt-link>
+            </li>
         </ul>
     </nav>
 </template>
