@@ -1,7 +1,8 @@
 <template>
   <main>
-    <h1>Count:</h1>
-    <h3>{{ count }}</h3>
+    <h1>Let Us Count:</h1>
+    <h2>{{ count }}</h2>
+    <h4>{{ new Date() | timeFormat }}</h4>
     <button @click="addToCount">Increase Count</button>
   </main>
 </template>
@@ -28,3 +29,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+h2 {
+  color: saddlebrown
+}
+</style>

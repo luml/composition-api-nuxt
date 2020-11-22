@@ -1,16 +1,13 @@
 <template>
   <div>
     <button v-tooltip.top-center="tip">Hover me</button>
-    <!-- <h1>{{post.title}}</h1>
-    <article v-for="post in posts" :key="post.id">
-        <h4>{{post.title}}</h4>
-    </article> -->
-    <div>{{posts}}</div>
-    <ul v-for="post in posts" :key="post.id">
-        <li>
-            <nuxt-link to="/sorry">😁</nuxt-link>
-        </li>
-    </ul>
+    <div class="grid-container">
+        <article v-for="post in posts" :key="post.id">
+            <h4>{{post.title}}</h4>
+            <img :src="post.image" alt="photo" width="300" height="200">
+            <nuxt-link :to="`${post.path}`">😁</nuxt-link>
+        </article>
+    </div>
   </div>
 </template>
 
@@ -29,4 +26,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
 </style>

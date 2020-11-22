@@ -1,3 +1,6 @@
-const time = new Date()
+import dayis from 'dayjs';
+import vue from 'vue';
 
-export default time.toDateString()
+vue.filter('timeFormat', function(value) {
+    return dayis(value).format('YYYY-MM-DD HH:mm:ss')
+})

@@ -12,7 +12,6 @@
             <i>Click on a friend!</i>
             <button @click="inviteFriend">Invite a new friens</button>
         </p>
-        <div>date()</div>
     </main>
 </template>
 
