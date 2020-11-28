@@ -2,14 +2,16 @@
     <main>
         <h1>Our taco Friends:</h1>
         <ul>
-            <li 
-                @click="alertUnit" 
-                v-for="friend in listOfFriends" 
-                :key="friend">{{ friend }}
+            <li
+                @click="alertUnit"
+                v-for="friend in listOfFriends"
+                :key="friend">
+                {{ friend }}
+              <i>HIT UP☎️</i>
+              <!-- <i v-else>TAKE CARE</i> -->
             </li>
         </ul>
         <p>
-            <i>Click on a friend!</i>
             <button @click="inviteFriend">Invite a new friens</button>
         </p>
     </main>
@@ -19,6 +21,11 @@
 import { defineComponent, reactive, toRefs } from "@vue/composition-api";
 
 export default defineComponent({
+    data() {
+      return {
+        isCalled: false,
+      }
+    },
     setup() {
         const state = reactive({
             listOfFriends: [
@@ -29,11 +36,14 @@ export default defineComponent({
         })
 
         function alertUnit(e: any) {
-            alert(e.target.textContent)
+            // this.isCalled = true
+            // console.log(e.currentTarget.textContent)
+            alert(e.currentTarget.textContent)
         }
 
         function inviteFriend() {
-            const newFriend = 'James' + Math.random()
+            const newFriend = 'James works night shift starts at between '
+              + Math.random().toFixed(1) + ' and ' + Math.random().toFixed(1)
             state.listOfFriends.unshift(newFriend)
         }
 
@@ -48,7 +58,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 ul {
-  width: 400px;
+  width: 550px;
 }
 
 li {
@@ -57,6 +67,10 @@ li {
   cursor: pointer;
   &:hover {
     background: #eee;
+  }
+
+  i {
+    float: right;
   }
 }
 

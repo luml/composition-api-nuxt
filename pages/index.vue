@@ -1,7 +1,7 @@
 <template>
   <main>
-    <h1>Let Us Count:</h1>
-    <h2>{{ count }}</h2>
+    <h2>LET US COUNT:</h2>
+    <h1>{{ count }}</h1>
     <h4>{{ new Date() | timeFormat }}</h4>
     <button @click="addToCount">Increase Count</button>
   </main>
