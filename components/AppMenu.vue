@@ -10,13 +10,16 @@
             <li>
               <nuxt-link to="/plugins">PluginLooks</nuxt-link>
             </li>
+            <li>
+              <nuxt-link to="/about">About</nuxt-link>
+            </li>
         </ul>
     </nav>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
 

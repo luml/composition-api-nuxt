@@ -15,6 +15,7 @@
       </section>
       <article>
         <h1>{{ article.title }}</h1>
+        <p>{{ article.description }}</p>
         <nuxt-content :document="article" />
       </article>
   </div>
@@ -25,7 +26,6 @@ export default {
   async asyncData({ $axios, route, $content }) {
     const post = await $axios.$get(`https://api.nuxtjs.dev/posts/${route.params.id}`);
     const article = await $content('home').fetch()
-    console.log(111, article)
     return { post, article };
   }
 };
