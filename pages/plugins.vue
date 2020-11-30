@@ -1,11 +1,10 @@
 <template>
   <div>
-    <button v-tooltip.top-center="tip">Hover me</button>
     <div class="grid-container">
         <article v-for="post in posts" :key="post.id">
             <h4>{{post.title}}</h4>
-            <img :src="post.image" alt="photo" width="300" height="200">
-            <nuxt-link :to="`${post.path}`">😁</nuxt-link>
+            <img @click="mountainDetail(post.path)" :src="post.image" alt="photo" width="300" height="200">
+            <nuxt-link :to="`${post.path}`">⛰️</nuxt-link>
         </article>
     </div>
   </div>
@@ -13,20 +12,22 @@
 
 <script>
 export default {
-    data() {
-        return {
-            tip: 'I am a useless plugin ?',
-        }
-    },
     async asyncData({ $axios }) {
         const posts = await $axios.$get(`https://api.nuxtjs.dev/posts`);
         return { posts };
+    },
+    methods: {
+      mountainDetail(path) {
+        this.$router.push(`${path}`)
+      }
     }
 };
 </script>
 
 <style lang="scss" scoped>
+
 .grid-container {
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -36,5 +37,14 @@ export default {
     ". . . ."
     ". . . ."
     ". . . .";
+
+    article {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        cursor: pointer;
+      }
+    }
 }
 </style>
