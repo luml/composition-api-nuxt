@@ -39,9 +39,41 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/axios',
+    '@nuxt/content',
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  content: {
+    editor: '~/.nuxt/content/editor.vue',
+    apiPrefix: '_content',
+    dir: 'content',
+    fullTextSearchFields: ['title', 'description', 'slug', 'text'],
+    nestedProperties: [],
+    liveEdit: true,
+    markdown: {
+      remarkPlugins: [
+        'remark-squeeze-paragraphs',
+        'remark-slug',
+        'remark-autolink-headings',
+        'remark-external-links',
+        'remark-footnotes'
+      ],
+      rehypePlugins: [
+        'rehype-minify-whitespace',
+        'rehype-sort-attribute-values',
+        'rehype-sort-attributes',
+        'rehype-raw'
+      ],
+      prism: {
+        theme: 'prismjs/themes/prism.css'
+      }
+    },
+    yaml: {},
+    csv: {},
+    xml: {},
+    extendParser: {}
   }
 }

@@ -9,6 +9,7 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
+    "@nuxt/content": "^1.11.1",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.2",
     "@vue/composition-api": "^1.0.0-beta.19",
@@ -16,6 +17,7 @@
     "dayjs": "^1.9.6",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.6",
+    "rehype-minify-whitespace": "^4.0.5",
     "sass-loader": "^10.1.0",
     "v-tooltip": "^2.0.3"
   },

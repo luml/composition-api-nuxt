@@ -13,14 +13,20 @@
         <span>Height: {{post.height}}</span>
         <span>Updated Time: {{post.updatedAt | timeFormatDate}}</span>
       </section>
+      <article>
+        <h1>{{ article.title }}</h1>
+        <nuxt-content :document="article" />
+      </article>
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData({ $axios, route }) {
+  async asyncData({ $axios, route, $content }) {
     const post = await $axios.$get(`https://api.nuxtjs.dev/posts/${route.params.id}`);
-    return { post };
+    const article = await $content('home').fetch()
+    console.log(111, article)
+    return { post, article };
   }
 };
 </script>
@@ -53,6 +59,10 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  article {
+    margin-top: 100px;
   }
 }
 </style>
