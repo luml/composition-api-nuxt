@@ -3,7 +3,12 @@
     <div class="grid-container">
         <article v-for="post in posts" :key="post.id">
             <h4>{{post.title}}</h4>
-            <img @click="mountainDetail(post.path)" :src="post.image" alt="photo" width="300" height="200">
+            <img
+              @click="mountainDetail(post.path)"
+              :src="post.image"
+              :alt="post.title"
+              width="300"
+              height="200">
             <nuxt-link :to="`${post.path}`">⛰️</nuxt-link>
         </article>
     </div>
@@ -44,6 +49,10 @@ export default {
 
       img {
         cursor: pointer;
+
+        &:hover {
+          filter: contrast(1.75);
+        }
       }
     }
 }

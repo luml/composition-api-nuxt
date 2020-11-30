@@ -7,10 +7,12 @@
       >
         {{post.title}}
       </div>
-      <span>Continent: {{post.continent}}</span>
-      <span>Countries: {{post.countries.join('、')}}</span>
-      <span>Height: {{post.height}}</span>
-      <span>Updated Time: {{post.updatedAt | timeFormatDate}}</span>
+      <section>
+        <span>Continent: {{post.continent}}</span>
+        <span>Countries: {{post.countries.join('、')}}</span>
+        <span>Height: {{post.height}}</span>
+        <span>Updated Time: {{post.updatedAt | timeFormatDate}}</span>
+      </section>
   </div>
 </template>
 
@@ -39,6 +41,18 @@ export default {
     align-items: center;
     justify-content: center;
     font-size: 50px;
+  }
+
+  section {
+    margin: -100px -100px -100px 550px;
+    border-radius: 10%;
+    background: beige;
+    width: 300px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 </style>
