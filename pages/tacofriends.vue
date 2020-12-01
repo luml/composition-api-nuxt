@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="taco-friends">
         <h1>Our taco Friends:</h1>
         <ul>
             <li
@@ -21,11 +21,6 @@
 import { defineComponent, reactive, toRefs } from "@vue/composition-api";
 
 export default defineComponent({
-    data() {
-      return {
-        isCalled: false,
-      }
-    },
     setup() {
         const state = reactive({
             listOfFriends: [
@@ -36,8 +31,6 @@ export default defineComponent({
         })
 
         function alertUnit(e: any) {
-            // this.isCalled = true
-            // console.log(e.currentTarget.textContent)
             alert(e.currentTarget.textContent)
         }
 
@@ -57,24 +50,27 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-ul {
-  width: 550px;
-}
+.taco-friends {
+  ul {
+    width: 550px;
+    margin: auto;
+  }
 
-li {
-  text-align: left;
-  transition: 0.4s all ease;
-  cursor: pointer;
-  &:hover {
-    background: #eee;
+  li {
+    text-align: left;
+    transition: 0.4s all ease;
+    cursor: pointer;
+    &:hover {
+      background: #eee;
+    }
+
+    i {
+      float: right;
+    }
   }
 
   i {
-    float: right;
+    color: #555;
   }
-}
-
-i {
-  color: #555;
 }
 </style>

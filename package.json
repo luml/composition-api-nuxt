@@ -19,7 +19,8 @@
     "nuxt": "^2.14.6",
     "rehype-minify-whitespace": "^4.0.5",
     "sass-loader": "^10.1.0",
-    "v-tooltip": "^2.0.3"
+    "v-tooltip": "^2.0.3",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",

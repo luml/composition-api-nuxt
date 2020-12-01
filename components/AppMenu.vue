@@ -13,6 +13,9 @@
             <li>
               <nuxt-link to="/about">About</nuxt-link>
             </li>
+            <li>
+              <nuxt-link to="/register">Register</nuxt-link>
+            </li>
         </ul>
     </nav>
 </template>
@@ -37,12 +40,16 @@ nav {
     text-decoration: none;
   }
   ul {
+    width: 100%;
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
     li {
       padding-right: 40px;
+    }
+    li:last-of-type {
+      margin-left: auto;
     }
   }
 }

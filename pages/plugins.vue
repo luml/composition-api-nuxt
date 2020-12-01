@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="grid-container">
         <article v-for="post in posts" :key="post.id">
             <h4>{{post.title}}</h4>
@@ -30,30 +30,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.grid-container {
-  margin: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 10px 10px;
-  grid-template-areas:
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . .";
+  .grid-container {
+    width: 900px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . ."
+      ". . .";
 
-    article {
-      display: flex;
-      flex-direction: column;
+      article {
+        display: flex;
+        flex-direction: column;
 
-      img {
-        cursor: pointer;
+        img {
+          cursor: pointer;
 
-        &:hover {
-          filter: contrast(1.75);
+          &:hover {
+            filter: contrast(1.75);
+          }
         }
       }
-    }
+  }
 }
+
 </style>

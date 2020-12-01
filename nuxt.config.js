@@ -25,6 +25,7 @@ export default {
     `~/plugins/date.js`,
     `~/plugins/axios.js`,
     `~/plugins/vue-tooltip.js`,
+    `~/plugins/vuelidate.js`,
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
